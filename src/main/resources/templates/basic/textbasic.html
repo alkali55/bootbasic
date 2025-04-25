@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>타임리프 기본</h1>
+    <div>th:text<span th:text="${data}">텍스트</span></div>
+    <div>직접 출력 [[${data}]]</div>
+
+    <div>
+        <div>th:text <span th:text="${unescapedData}"></span></div>
+        <div>th:utext <span th:utext="${unescapedData}"></span></div>
+    </div>
+    <div>
+        <div>th:inline <span th:inline="none">[[]]</span>[[${unescapedData}]]</div>
+        <div>th:inline <span th:inline="none">[()]</span>[(${unescapedData})]</div>
+    </div>
+</body>
+</html>

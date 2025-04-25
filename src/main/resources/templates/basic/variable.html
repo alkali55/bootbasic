@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Spring EL</h1>
+    <h2>객체</h2>
+    <div th:text="${user.username}"></div>
+    <div th:text="${user.age}"></div>
+
+    <h2>List</h2>
+    <ul>
+        <li th:text="${users[0].username}"></li>
+        <li th:text="${users[1].username}"></li>
+        <li th:text="${users[0].getUsername}"></li>
+    </ul>
+
+    <h2>Map</h2>
+    <ul>
+        <li th:text="${userMap['choi'].username}"></li>
+        <li th:text="${userMap['choi']['username']}"></li>
+        <li th:text="${userMap['hong'].getUsername()}"></li>
+    </ul>
+
+    <h2>지역변수 th:with</h2>
+    <h3>지역변수는 선언한 태그 안에서만 사용가능</h3>
+    <div th:with="first=${users[0]}">
+        <p th:text="${first.username}"></p>
+    </div>
+
+<!--    선언한 태그 밖에서는 에러-->
+<!--    <p th:text="${first.username}"></p>-->
+
+</body>
+</html>
