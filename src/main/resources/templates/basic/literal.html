@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+  <h1>리터럴 Literal</h1>
+
+  <p th:text="hellothymeleaf"></p>
+  <p>
+    Now you are looking at a <span th:text="'working web application'">template file</span>.
+  </p>
+
+  <p><span th:text="'The name of the user is ' + ${data}"></span></p>
+  <p><span th:text="|Welcome to our application, ${data}!|"></span></p>
+
+  <h2>숫자</h2>
+  <p>The year is <span th:text="2025">1492</span>.</p>
+  <p>In two years, it will be <span th:text="2025 + 2">1494</span>.</p>
+
+  <h2>boolean</h2>
+  <div th:if="${isValid} == false">false</div>
+  <div th:if="${isValid} == true">true</div>
+
+  <div th:if="${isValid == false}">false</div>
+  <div th:if="${isValid == true}">true</div>
+
+  <h2>null</h2>
+  <div th:if="${isNull} == null">Null입니다</div>
+
+
+</body>
+</html>

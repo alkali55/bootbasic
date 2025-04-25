@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <h1>th:each</h1>
+  <table border="1">
+      <tr>
+          <th>username</th>
+          <th>age</th>
+          <th>index</th>
+          <th>count</th>
+          <th>size</th>
+          <th>current</th>
+          <th>even</th>
+          <th>odd</th>
+          <th>first</th>
+          <th>last</th>
+      </tr>
+      <tr th:each="user, userStat : ${users}">
+        <td th:text="${user.username}"></td>
+        <td th:text="${user.age}"></td>
+        <td th:text="${userStat.index}"></td>
+        <td th:text="${userStat.count}"></td>
+        <td th:text="${userStat.size}"></td>
+        <td th:text="${userStat.current}"></td>
+        <td th:text="${userStat.even}"></td>
+        <td th:text="${userStat.odd}"></td>
+        <td th:text="${userStat.first}"></td>
+        <td th:text="${userStat.last}"></td>
+
+      </tr>
+
+  </table>
+
+
+  <table border="1">
+      <tr>
+          <th>key</th>
+          <th>username</th>
+          <th>age</th>
+      </tr>
+      <tr th:each="entry : ${userMap}">
+          <td th:text="${entry.key}"></td>
+          <td th:text="${entry.value.username}"></td>
+          <td th:text="${entry.value.age}"></td>
+      </tr>
+
+  </table>
+
+</body>
+</html>

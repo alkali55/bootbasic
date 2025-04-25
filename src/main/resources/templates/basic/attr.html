@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+<style>
+  .red{ color : red;}
+</style>
+
+</head>
+<body>
+  <h1>attrappend</h1>
+
+  <div><input type="text" class="text" th:attrappend="class=' red'"></div>
+  <div><input type="text" class="text" th:classappend="red"></div>
+
+  <h2>checkbox</h2>
+  <div><input type="checkbox" checked="false"></div>
+  <div><input type="checkbox" th:checked="true"></div>
+  <div><input type="checkbox" th:checked="false"></div>
+
+</body>
+</html>

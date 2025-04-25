@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <h1>link</h1>
+
+
+<!--  http://localhost:8081/member-->
+    <div><a th:href="@{/member}">url</a></div>
+
+<!--  http://localhost:8081/member?name=hong&age=10-->
+    <div><a th:href="@{/member(name=${name}, age=${age})}">쿼리스트링</a></div>
+
+<!--  http://localhost:8081/member?hong&10-->
+    <div><a th:href="@{/member(${name}, ${age})}">쿼리스트링</a></div>
+
+<!--  http://localhost:8081/member/hong/10-->
+    <div><a th:href="@{/member/{name}/{age}(name=${name}, age=${age})}">pathVariable</a></div>
+
+    <div><a th:href="@{/member/{name}(name=${name}, age=${age})}">쿼리스트링_pathVariable</a></div>
+</body>
+</html>

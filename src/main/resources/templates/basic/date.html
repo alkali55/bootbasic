@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <h1>date</h1>
+
+  <h2>LocalDateTime</h2>
+  <div th:text="${localDateTime}"></div>
+  <div th:text="${#temporals.format(localDateTime, 'yyyy-MM-dd HH:mm:ss')}"></div>
+
+  <div th:text="${#temporals.day(localDateTime)}"></div>
+  <div th:text="${#temporals.month(localDateTime)}"></div>
+  <div th:text="${#temporals.monthName(localDateTime)}"></div>
+  <div th:text="${#temporals.monthNameShort(localDateTime)}"></div>
+  <div th:text="${#temporals.year(localDateTime)}"></div>
+  <div th:text="${#temporals.dayOfWeek(localDateTime)}"></div>
+  <div th:text="${#temporals.dayOfWeekName(localDateTime)}"></div>
+  <div th:text="${#temporals.dayOfWeekNameShort(localDateTime)}"></div>
+  <div th:text="${#temporals.hour(localDateTime)}"></div>
+  <div th:text="${#temporals.minute(localDateTime)}"></div>
+  <div th:text="${#temporals.second(localDateTime)}"></div>
+  <div th:text="${#temporals.nanosecond(localDateTime)}"></div>
+
+
+  <h2>Calendar</h2>
+
+  <div th:text="${#calendars.format(calendar, 'dd/MMM/yyyy HH:mm')}"></div>
+
+  <div th:text="${#calendars.day(date)}"></div>
+  <div th:text="${#calendars.month(date)}"></div>
+  <div th:text="${#calendars.monthName(date)}"></div>
+  <div th:text="${#calendars.monthNameShort(date)}"></div>
+  <div th:text="${#calendars.year(date)}"></div>
+  <div th:text="${#calendars.dayOfWeek(date)}"></div>
+  <div th:text="${#calendars.dayOfWeekName(date)}"></div>
+  <div th:text="${#calendars.dayOfWeekNameShort(date)}"></div>
+  <div th:text="${#calendars.hour(date)}"></div>
+  <div th:text="${#calendars.minute(date)}"></div>
+  <div th:text="${#calendars.second(date)}"></div>
+  <div th:text="${#calendars.millisecond(date)}"></div>
+
+
+  <h2>Date</h2>
+  <div th:text="${date}"></div>
+  <div th:text="${#dates.format(date, 'dd/MMM/yyyy HH:mm')}"></div>
+  <div th:text="${#dates.format(calendar, 'dd/MMM/yyyy HH:mm')}"></div>
+<!--  <div th:text="${dates.format(localDateTime, 'dd/MMM/yyyy HH:mm')}"></div>-->
+<!--  위 문장은 에러-->
+
+
+  <h2>Timestamp</h2>
+  <div th:text="${#dates.format(timestamp, 'dd/MMM/yyyy HH:mm')}"></div>
+
+
+</body>
+</html>

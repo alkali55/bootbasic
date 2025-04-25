@@ -9,5 +9,13 @@
     <h1>basic object</h1>
 
     <div th:text="${session.sessionData}"></div>
+
+    <div th:text="${#locale}"></div>
+    <div th:text="${#locale.country}"></div>
+
+    <h2>쿼리스트링 파라미터</h2>
+<!--    http://localhost:8081/basicobject?paramData=파라미터-->
+    <div th:text="${param.paramData}"></div>
+
 </body>
 </html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+<style>
+  .red{ color : red;}
+</style>
+
+</head>
+<body>
+  <h1>주석</h1>
+
+  <h2>Standard HTML comments</h2>
+<!--  <div th:text="html"></div>-->
+
+  <h2>Thymeleaf parser-level comment blocks</h2>
+
+  <!--/* This code will be removed at Thymeleaf parsing time! */-->
+
+  <!--/*-->
+  <div>
+    you can see me only before Thymeleaf processes me!
+  </div>
+  <!--*/-->
+
+</body>
+</html>

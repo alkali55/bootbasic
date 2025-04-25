@@ -6,10 +6,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.*;
 
 @Controller
 public class HomeController {
@@ -56,4 +55,100 @@ public class HomeController {
 
         return "/basic/basicobject";
     }
+
+    @GetMapping("link")
+    public String link(Model model){
+
+        model.addAttribute("name", "hong");
+        model.addAttribute("age", "10");
+
+        return "/basic/link";
+    }
+
+    @GetMapping("/date")
+    public String date(Model model){
+
+        model.addAttribute("localDateTime", LocalDateTime.now());
+        model.addAttribute("calendar", Calendar.getInstance());
+        model.addAttribute("date", new Date());
+        model.addAttribute("timestamp", new Timestamp(System.currentTimeMillis()));
+        return "/basic/date";
+    }
+
+    @GetMapping("/literal")
+    public String literal(Model model){
+
+        model.addAttribute("data", "thymeleaf");
+        model.addAttribute("isValid", true);
+        model.addAttribute("isNull", null);
+        return "/basic/literal";
+    }
+
+    @GetMapping("/operation")
+    public String operation(Model model) {
+
+        model.addAttribute("isValid", true);
+        model.addAttribute("isNull", null);
+        model.addAttribute("data", "thymeleaf");
+        return "/basic/operation";
+
+    }
+
+    @GetMapping("/attr")
+    public String attr() {
+
+
+        return "/basic/attr";
+
+    }
+
+    @GetMapping("/theach")
+    public String theach(Model model) {
+
+        User hong = new User("hong", 10);
+        User choi = new User("choi", 20);
+        User lee = new User("lee", 30);
+
+        List<User> list = new ArrayList<>();
+        list.add(hong);
+        list.add(choi);
+        list.add(lee);
+
+        Map<String, User> map = new HashMap<>();
+        map.put("choi", choi);
+        map.put("hong", hong);
+        map.put("lee", lee);
+
+
+        model.addAttribute("userMap", map);
+        model.addAttribute("users", list);
+        return "/basic/theach";
+
+    }
+
+    @GetMapping("/comments")
+    public String comments() {
+
+        return "/basic/comments";
+
+    }
+
+    @GetMapping("/inlinejs")
+    public String inlinejs(Model model) {
+        model.addAttribute("user", new User("hong", 10));
+
+        User hong = new User("hong", 10);
+        User choi = new User("choi", 20);
+        User lee = new User("lee", 30);
+
+        List<User> list = new ArrayList<>();
+        list.add(hong);
+        list.add(choi);
+        list.add(lee);
+
+        model.addAttribute("users", list);
+        return "/basic/inlinejs";
+
+    }
+
 }
